@@ -1,0 +1,80 @@
+topic,topic_desc,topic_description
+2,C.06,"C.06 Neurotoxicity, Inflammation, and Neuroprotection"
+3,H.02,H.02 Human Cognition and Behavior
+4,H.01,H.01 Animal Cognition and Behavior
+5,G.06,G.06 Post-traumatic Stress Disorder
+6,C.07,C.07 Ischemia
+7,C.08,C.08 Stroke
+8,E.09,E.09 Spinal Cord Injury and Plasticity
+9,C.09,C.09 Brain Injury and Trauma
+10,A.04,A.04 Transplantation and Regeneration
+11,B.06,B.06 Neurotransmitter Release
+13,D.05,D.05 Olfaction and Taste
+14,D.03,D.03 Somatosensation: Pain
+15,D.01,D.01 Sensory Disorders
+17,B.11,B.11 Epilepsy
+18,B.02,B.02 Ligand-Gated Ion Channels
+19,B.03,B.03 G-Protein Coupled Receptors
+20,B.01,B.01 Neurotransmitters and Signaling Molecules
+21,A.06,A.06 Synaptogenesis and Activity-Dependent Development
+23,B.04,B.04 Ion Channels
+24,B.09,B.09 Physiological Properties of Neurons
+25,B.05,B.05 Transporters
+26,F.10,F.10 Food Intake and Energy Balance
+27,A.07,A.07 Developmental Disorders
+28,H.03,H.03 Schizophrenia
+29,F.02,F.02 Behavioral Neuroendocrinology
+30,F.03,F.03 Neuroendocrine Processes
+31,G.04,G.04 Mood Disorders: Depression and Bipolar Disorders
+32,F.04,F.04 Stress and the Brain
+33,G.05,G.05 Anxiety Disorders
+35,G.01,G.01 Appetitive and Aversive Learning
+36,G.03,G.03 Emotion
+37,G.02,G.02 Motivation
+62,G.02,G.02 Motivation
+38,A.09,A.09 Adolescent Development
+39,G.07,G.07 Other Psychiatric Disorders
+40,G.08,G.08 Drugs of Abuse and Addiction
+42,C.03,C.03 Parkinson’s Disease
+43,A.05,A.05 Axon and Dendrite Development
+44,C.02,C.02 Alzheimer's Disease and Other Dementias
+46,B.12,B.12 Glial Mechanisms
+47,F.05,F.05 Neuroimmunology
+49,A.02,A.02 Postnatal Neurogenesis
+50,A.01,A.01 Neurogenesis and Gliogenesis
+67,A.01,A.01 Neurogenesis and Gliogenesis
+51,A.03,A.03 Stem Cells and Reprogramming
+52,B.13,B.13 Demyelinating Disorders
+53,F.07,F.07 Autonomic Regulation
+55,E.08,E.08 Respiratory Regulation
+68,A.10,A.10 Development and Evolution
+79,C.05,C.05 Neuromuscular Diseases
+80,C.04,C.04 Movement Disorders
+81,C.04,C.04 Movement Disorders
+82,I.01,"I.01 Molecular, Biochemical, and Genetic Techniques"
+83,F.06,"F.06 Brain Blood Flow, Metabolism, and Homeostasis"
+84,C.01,C.01 Brain Wellness and Aging
+90,E.03,E.03 Basal Ganglia
+92,E.07,E.07 Rhythmic Motor Pattern Generation
+93,A.08,"A.08 Development of Motor, Sensory, and Limbic Systems"
+94,D.04,D.04 Somatosensation: Touch
+95,B.10,B.10 Network Interactions
+96,I.07,I.07 Data Analysis and Statistics
+97,I.06,"I.06 Computation, Modeling, and Simulation"
+98,I.04,I.04 Physiological Methods
+99,I.03,I.03 Anatomical Methods
+100,D.08,D.08 Vestibular System
+101,D.06,D.06 Audition
+102,F.01,F.01 Neuroethology
+103,E.02,E.02 Cerebellum
+104,E.01,E.01 Eye Movements
+105,D.09,D.09 Visual Sensory-motor Processing
+106,D.07,D.07 Vision
+107,D.10,D.10 Multisensory Integration
+108,E.04,E.04 Voluntary Movements
+109,E.05,E.05 Brain-Machine Interface
+110,E.10,E.10 Motor Neurons and Muscle
+111,E.06,E.06 Posture and Gait
+113,F.08,F.08 Biological Rhythms and Sleep
+114,B.14,B.14 Neuro-Oncology
+115,F.09,F.09 Thirst and Water Balance
