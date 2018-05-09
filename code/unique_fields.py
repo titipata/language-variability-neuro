@@ -12,7 +12,7 @@ from scipy.stats import spearmanr, pearsonr
 from scipy.stats import kstest, ks_2samp
 from itertools import combinations, combinations_with_replacement
 from entropy import distance_language, distance_language_cosine, calculate_hamming_dist
-from langauge_dist_corr import average_topic_topic_dist
+from language_dist_corr import average_topic_topic_dist
 
 from sklearn.externals import joblib
 
@@ -29,7 +29,7 @@ def shuffle_topic_within_year(df):
         partition_shuffle = df_year.topic.as_matrix()
         np.random.shuffle(partition_shuffle)
         df_year['topic'] = partition_shuffle
-        df_list.append(sfn_year_df)
+        df_list.append(df_year)
     df_shuffle = pd.concat(df_list)
     return df_shuffle
 
@@ -52,8 +52,9 @@ if __name__ == '__main__':
                                           n_iter=n_iter,
                                           n_sample=n_sample)
         n_topics = len(D_lang)
-        d_neighbor.append([(year, partitions[i], np.sort(D_fields[i, :])[0],
-                            np.sort(D_fields[i, :])[1]]) for i in range(n_topics)])
+        for i in range(n_topics):
+            d_neighbor_shuffle.append((year, partitions[i], np.sort(D_lang[i, :])[0],
+                                      np.sort(D_lang[i, :])[1]))
     d_neighbor_df = pd.DataFrame(d_neighbor,
                                  columns=['year', 'topic_desc', 'd_field', 'd_nearest_neighbor'])
     d_neighbor_df.to_csv(os.path.join('..', 'data', 'language_distance.csv'), index=False)
@@ -66,8 +67,9 @@ if __name__ == '__main__':
                                           n_iter=n_iter,
                                           n_sample=n_sample)
         n_topics = len(D_lang)
-        d_neighbor_shuffle.append([(year, partitions[i], np.sort(D_lang[i, :])[0],
-                                    np.sort(D_lang[i, :])[1]]) for i in range(n_topics)])
+        for i in range(n_topics):
+            d_neighbor_shuffle.append((year, partitions[i], np.sort(D_lang[i, :])[0],
+                                      np.sort(D_lang[i, :])[1]))
     d_neighbor_shuffle_df = pd.DataFrame(d_neighbor_shuffle,
                                          columns=['year', 'topic_desc', 'd_field', 'd_nearest_neighbor'])
     d_neighbor_shuffle_df.to_csv(os.path.join('..', 'data', 'language_distance_shuffle.csv'), index=False)
