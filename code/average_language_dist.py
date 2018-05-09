@@ -117,4 +117,5 @@ if __name__ == '__main__':
     n_papers_df = df.groupby(['year', 'topic'])[['subtopic']].count().reset_index().rename(columns={'subtopic': 'n_papers'})
     distance_average_df = distance_yy_df.groupby(['topic', 'year'])[['d_lang']].mean().reset_index()
     n_papers_df = distance_average_df.merge(n_papers_df, on=['topic', 'year']).query('n_papers >= 60')
+    n_papers_df.to_csv(os.path.join('..', 'data', 'n_papers_df.csv'), index=False)
     print('Correlation between size and language distance = ', pearsonr(n_papers_df.d_lang, n_papers_df.n_papers))
