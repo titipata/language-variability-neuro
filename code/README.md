@@ -9,6 +9,6 @@
 
 - `python language_dist_corr.py` to generate figure 2
 - `python average_language_dist.py` to generate figure 3
-- `python unique_field.py` to generate figure 4
+- `python unique_field.py` and `model_validation.py` to generate figure 4
 
 see `figures` folder for generated figures

@@ -1,4 +1,4 @@
-# script to generate figure 2
+# script to generate data for figure 4
 
 import os
 import sys
@@ -75,3 +75,9 @@ if __name__ == '__main__':
     d_neighbor_shuffle_df.to_csv(os.path.join('..', 'data', 'language_distance_shuffle.csv'), index=False)
 
     n_papers_df = pd.read_csv(os.path.join('..', 'data', 'n_papers_df.csv'))
+
+    # correlation between distance to neighbor and language variability within the field
+    print(pearsonr(d_neighbor_df.merge(n_papers_df).d_nearest_neighbor,
+                   d_neighbor_df.merge(n_papers_df).d_field))
+    print(pearsonr(d_neighbor_shuffle_df.merge(n_papers_df).d_nearest_neighbor,
+                   d_neighbor_shuffle_df.merge(n_papers_df).d_field))
