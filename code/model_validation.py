@@ -1,7 +1,9 @@
 # more script for model validation and figure 4s
-
+import os
 import pandas as pd
-from scipy.stats import ks_2samp
+from scipy.stats import ks_2samp, pearsonr
+import matplotlib.pyplot as plt
+
 
 def test_linear_vs_mixture(df):
     """
@@ -40,16 +42,16 @@ def ks_test_distribution(df, df_shuffle):
 
 
 if __name__ == '__main__':
-    
+
     lang_df = pd.read_csv(os.path.join('..', 'data', 'language_distance.csv'))
     lang_shuffle_df = pd.read_csv(os.path.join('..', 'data', 'language_distance_shuffle.csv'))
     n_papers_df = pd.read_csv(os.path.join('..', 'data', 'n_papers_df.csv'))[['topic', 'year', 'n_papers']]
 
     # correlation data, shuffle control
     print(pearsonr(lang_df.merge(n_papers_df).query("n_papers > 50").d_nearest_neighbor,
-                   lang_df.merge(n_papers_df).query("n_papers > 50").d_lang))
+                   lang_df.merge(n_papers_df).query("n_papers > 50").d_field))
     print(pearsonr(lang_shuffle_df.merge(n_papers_df).query("n_papers > 50").d_nearest_neighbor,
-                   lang_shuffle_df.merge(n_papers_df).query("n_papers > 50").d_lang))
+                   lang_shuffle_df.merge(n_papers_df).query("n_papers > 50").d_field))
     # KS-test shows that distribution is different
     print(ks_test_distribution(lang_df, lang_shuffle_df))
 
@@ -62,19 +64,23 @@ if __name__ == '__main__':
                    lang_var_shuffle_df.query('n_papers > 50').d_lang))
 
     plt.subplot(1, 2, 1)
-    plt.scatter(lang_var_df.d_nearest_neighbor, lang_var_df.d_lang,
-                c='tomato', alpha=0.7)
     plt.scatter(lang_var_shuffle_df.d_nearest_neighbor, lang_var_shuffle_df.d_lang,
                 c='gray', alpha=0.4)
+    plt.scatter(lang_var_df.d_nearest_neighbor, lang_var_df.d_lang,
+                c='tomato', alpha=0.7)
     plt.xlabel('Language distance to nearest topic', fontsize=20)
     plt.ylabel('Year-on-year language distance', fontsize=20)
     plt.xticks(fontsize=16)
     plt.yticks(fontsize=16)
 
     plt.subplot(1, 2, 2)
-    plt.scatter(lang_df.d_nearest_neighbor, lang_df.d_field, c='tomato', alpha=0.7)
-    plt.scatter(lang_shuffle_df.d_nearest_neighbor, lang_shuffle_df.d_field, c='gray', alpha=0.4)
+    plt.scatter(lang_shuffle_df.d_nearest_neighbor, lang_shuffle_df.d_field,
+                c='gray', alpha=0.4)
+    plt.scatter(lang_df.d_nearest_neighbor, lang_df.d_field,
+                c='tomato', alpha=0.7)
     plt.xlabel('Language distance to nearest topic', fontsize=20)
     plt.ylabel('Within year language distance', fontsize=20)
     plt.xticks(fontsize=16)
     plt.yticks(fontsize=16)
+    plt.savefig(os.path.join('..', 'figures', 'figure_4.svg'))
+    plt.show()
