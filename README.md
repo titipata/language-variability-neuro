@@ -31,8 +31,11 @@ You can read the full manuscript [here](https://github.com/titipata/language-var
 
 ## Data Availability
 
-In process of making agreement with [SfN](https://www.sfn.org/), hopefully will be soon available.
-The data will contains ~ 60k shuffle SfN abstracts 2013 - 2017 with corresponding subtopic/topic/theme annotated by SfN.
+The data is license under [SfN agreement](https://www.sfn.org/) which can be used for
+research purpose only. See `data` folder to see how to download the dataset.
+The data contains roughly 60k shuffle SfN abstracts from year 2013 to 2017 with
+corresponding subtopic/topic/theme annotated by SfN.
+
 
 
 ## Dependencies
